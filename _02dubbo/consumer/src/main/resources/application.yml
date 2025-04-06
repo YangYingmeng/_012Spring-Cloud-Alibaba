@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sample-consumer
+  cloud:
+    nacos:
+      discovery: # nacos 服务注册中心的地址
+        server-addr: 127.0.0.1:8848
+dubbo:
+  cloud:
+    subscribed-services: sample-provider
+  scan: # 指定dubbo服务实现类的扫描包路径
+    base-packages: com.yym.dubbo

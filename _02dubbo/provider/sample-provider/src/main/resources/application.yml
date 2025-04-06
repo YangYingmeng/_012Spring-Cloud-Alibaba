@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: sample-provider
+  cloud:
+    nacos:
+      discovery: # nacos 服务注册中心的地址
+        server-addr: 127.0.0.1:8848
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20880
+  registry: # dubbo服务注册中心的配置地址
+    address: spring-cloud://localhost
+  scan: # 指定dubbo服务实现类的扫描包路径
+    base-packages: com.yym.dubbo.service
